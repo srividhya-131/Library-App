@@ -12,7 +12,7 @@ if "library_data" not in st.session_state:
 
 # Application title
 st.title("📚 Automatic Library Management System")
-menu=st.sidebar.radio("menu", ["add book","view book","search books", "checkout/return book"])
+menu=st.sidebar.radio("menu", ["add book","view book","search books", "check out/return book"])
 if menu=="add book":
    st.header("Add a new book to the library")
    with st.form("add_book_form"):
@@ -30,12 +30,12 @@ if menu=="add book":
      else:
         st.error("Please fill in both Title and Author.")
 #view all books
-elif menu == "View Books":
+elif menu == "view books":
   st.header("Library Books")
   st.dataframe(st.session_state.library_data)
 
 #search for a book
-elif menu== "search Books":
+elif menu== "search books":
   st.header("Search for Books")
   search_option = st.radio("Search by", ["title", "Author"])
   query = st.text_input("Enter {search_option}:")
@@ -50,7 +50,7 @@ elif menu== "search Books":
       st.warning(f"No books found matching {search_option}: {query}")
 
 #Check out/return a book
-elif menu== "Check Out/Return Book":
+elif menu== "check out/return book":
    st.header("Manage Book Status")
    with st.form("manage_status_form"):
      book_title = st.text_input("Enter Book Title")
