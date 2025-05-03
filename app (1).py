@@ -38,7 +38,7 @@ elif menu == "view books":
 elif menu== "search books":
   st.header("Search for Books")
   search_option = st.radio("Search by", ["title", "Author"])
-  query = st.text_input("Enter {search_option}:")
+  query = st.text_input(f"Enter {search_option}:")
 
   if query:
     filtered_data=st.session_state.library_data[
