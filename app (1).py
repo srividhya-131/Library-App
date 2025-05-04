@@ -12,7 +12,7 @@ if "library_data" not in st.session_state:
 
 # Application title
 st.title("📚 Automatic Library Management System")
-menu=st.sidebar.radio("menu", ["add book","view book","search books", "check out/return book"])
+menu=st.sidebar.radio("menu", ["add book","view books","search books", "check out/return book"])
 if menu=="add book":
    st.header("Add a new book to the library")
    with st.form("add_book_form"):
